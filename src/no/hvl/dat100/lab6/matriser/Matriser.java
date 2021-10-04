@@ -5,31 +5,63 @@ public class Matriser {
 	// a)
 	public static void skrivUt(int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("skrivUt ikke implementert");
+		for (int[] rad : matrise) {
+			for(int tall : rad) {
+				System.out.println(tall);
+			}
+		}
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("tilStreng ikke implementert");
+		String str = "";
+		
+		for (int[] rad : matrise) {
+			for(int tall : rad) {
+				str += tall+ " ";
+			}
+			str += "\n";
+		}
+		return str;
+		
 		
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("skaler ikke implementert");
+		int multiplisert [][] = new int [matrise.length][matrise[0].length];
+		int radIndex = 0;
+		for (int[] rad : matrise) {
+		int tallIndex=0;
+			for(int tallIMatrise : rad) {
+				multiplisert[radIndex][tallIndex] = tallIMatrise*tall;
+				tallIndex++;
+			}
+		radIndex++;
+		}
+		return multiplisert;
+		
 	
 	}
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
-
-		// TODO
-		throw new UnsupportedOperationException("erLik ikke implementert");
+		boolean like = true;
+		int radIndex = 0;
+		for (int[] rad : a) {
+		int tallIndex=0;
+			for(int tallIMatrise : rad) {
+				if (tallIMatrise != b[radIndex][tallIndex]) {
+					like = false;
+				}
+				tallIndex++;
+			}
+		radIndex++;
+		}
+		return like;
+		
 	}
 	
 	// e)
